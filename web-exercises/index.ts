@@ -19,7 +19,7 @@ app.get('/bmi', (req, res) => {
       bmi
     });
   } catch (error) {
-    res.status(401).json({ error: 'malformatted parameters '});
+    res.status(401).json({ error: 'malformatted parameters ' });
   }
 });
 
