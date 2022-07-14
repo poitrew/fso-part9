@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import { apiBaseUrl } from "../constants";
 import { Patient } from "../types";
 
-import { Typography } from "@material-ui/core";
 import MaleIcon from '@mui/icons-material/Male';
+import FemaleIcon from '@mui/icons-material/Female';
 
 const PatientFullInfo = () => {
   const [patient, setPatient] = useState<Patient>();
@@ -26,10 +26,12 @@ const PatientFullInfo = () => {
 
   return (
     <div style={{ marginTop: "1em" }}>
-      <Typography >
-        {patient?.name} 
-        <MaleIcon />
-      </Typography>
+      <h2>{patient?.name} {patient?.gender === 'male' ? <MaleIcon /> : <FemaleIcon />}</h2>
+      <p>
+        ssn: {patient?.ssn}
+        <br />
+        occupation: {patient?.occupation}
+      </p>
     </div>
   );
 };
